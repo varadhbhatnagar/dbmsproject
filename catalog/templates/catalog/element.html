@@ -1,0 +1,23 @@
+{% extends 'catalog/base.html' %}
+
+{%  block title %} Product Details {% endblock %}
+{% block body %}
+
+    <h1 style="background-color:lightblue;">Category : {{ cat.category_name }} </h1>
+
+
+
+    <img src = " {{ product.img_link }}" border="3px" width="400" height="400" >
+
+    <h2>Product Name : {{ product.product_name }}</h2>
+    <h2>Colour : {{ product.color }}</h2>
+    <h2>Price : Rs {{ product.price }}</h2>
+
+    <ul>
+        {% for product in product.product_set.all %}
+        <li>{{ product.product_name }} - {{ product.color }}</li>
+        {% endfor %}
+
+    </ul>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'catalog/base.html' %}
+
+{%  block title %} Category Details {% endblock %}
+{% block body %}
+
+<h1 style="background-color:lightblue;">Category : {{ cat.category_name }}</h1>
+
+{%  if all_product %}
+    <h3>Select Appropriate Product :</h3>
+    <ul>
+
+        {% for product in all_product %}
+        <li>
+
+            <a href="{% url 'element' cat.id product.id  %}">{{ product.product_name }} </a>
+
+        </li>
+
+        {% endfor %}
+    </ul>
+
+{% else %}
+    <h3>You don't have any product in this category</h3>
+
+{%  endif %}
+
+{% endblock %}
