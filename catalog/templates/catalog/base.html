@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}Buytes{% endblock %}</title>
+
+    {% load staticfiles %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'catalog/style.css' %}"/>
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid ">
+
+        <!-- Header -->
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'index' %}" > Buytes </a>
+        </div>
+
+        <!-- Items -->
+        <div class="collapse navbar-collapse" id="topNavBar" >
+
+            <ul class="nav navbar-nav" >
+                <li class="active" >
+                    <a href="{% url 'index' %}" >
+                        <span class="glyphicon glyphicon-th-large" aria-hidden="true" ></span>&nbsp;
+                        Categories
+                    </a>
+
+                </li>
+
+             </ul>
+
+            <ul class="nav navbar-nav" >
+                <li class="" >
+                    <a href="{% url 'index' %}" >
+                        <span class="glyphicon glyphicon-star-empty" aria-hidden="true" ></span>&nbsp;
+                        New Products
+                    </a>
+
+                </li>
+
+             </ul>
+
+
+            <form class="navbar-form navbar-left" role="search" method="get" action="#">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="q" value="" placeholder="Product Name ..." >
+                </div>
+
+                <button type="submit" class="btn btn-default"> Search</button>
+            </form>
+
+            <ul class="nav navbar-nav navbar-right">
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">My Account
+                        <span class="caret" ></span></a>
+                            <ul class="dropdown-menu">
+
+                              <li><a href="#">Account Details</a></li>
+                              <li><a href="#">Order History</a></li>
+                              <li><a href="#">Help</a></li>
+
+                            </ul>
+                </li>
+
+
+                <li class="" >
+                    <a href="#">
+                        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true">
+                        </span>&nbsp;
+                        My Cart
+                    </a>
+                </li>
+
+
+                <li class="">
+                    <a href="#">
+                         <span class="glyphicon glyphicon-circle-arrow-right"  aria-hidden="true"></span>&nbsp; Checkout
+                    </a>
+                </li>
+
+                <li class="">
+                    <a href="#">
+                         <span class="glyphicon glyphicon-off"  aria-hidden="true"></span>&nbsp; Logout
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+{% block body %}
+{% endblock %}
+
+
+</body>
+</html>

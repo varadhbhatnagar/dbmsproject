@@ -1,5 +1,6 @@
 from django.shortcuts import render , get_object_or_404
 from .models import Product , Category
+from django.contrib.auth.models import User
 
 
 # Create your views here.
@@ -27,3 +28,9 @@ def detail(request, cat_id):
     cat = Category.objects.get(id=cat_id)
     context = {'all_product': all_product, 'cat' : cat}
     return render(request, 'catalog/detail.html', context)
+
+
+def userdetail(request , user_id):
+    cust = get_object_or_404(User,id=user_id)
+    return render(request , 'catalog/userdetail.html',{'cust' : cust})
+
